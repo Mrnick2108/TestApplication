@@ -17,5 +17,28 @@
   },
   "devDependencies": {
     "electron-packager": "^14.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mrnick2108/TestApplication.git/"
+  },
+      "publish": {
+      "provider": "github",
+      "releaseType": "release"
+  },
+  "build": {
+      "productName": "TestApp",
+      "appId": "com.example.TestApp",
+      "directories": {
+          "output": "build"
+      },
+      "files": [
+          "dist/electron/**/*"
+      ],
+      "win": {
+          "icon": "build/icons/icon.ico",
+      "publish": [
+              "github"
+          ]
+      }
 }

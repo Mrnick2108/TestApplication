@@ -20,14 +20,20 @@ app.on('ready', function() {
         slashes: true
     }));
 
+    setInterval(() => {
+      autoUpdater.checkForUpdates()
+    }, 60000);
+
+    setInterval(() => {
+      autoUpdater.checkForUpdatesAndNotify()
+    }, 60000);
+
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
 
-    Menu.setApplicationMenu(mainMenu);
+    //Menu.setApplicationMenu(mainMenu);
 });
 
-setInterval(() => {
-    autoUpdater.checkForUpdates()
-  }, 60000);
+
 
 autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
     const dialogOpts = {
