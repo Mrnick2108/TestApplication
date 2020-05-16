@@ -4,14 +4,10 @@
   "description": "Test electorn app",
   "main": "main.js",
   "scripts": {
-    "start": "NODE_ENV=test electron .",
-    "production": "electron .",
-    "inspect-main": "electron-inspector",
-    "build": "rollup -c",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder --x64 --win",
-    "gh-publish": "electron-builder --x64 --win -p always",
-    "test": "NODE_ENV=test mocha"
+    "dev": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "dist": "yarn compile && electron-builder",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
   "author": "Nick",
   "license": "MIT",
@@ -26,17 +22,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Mrnick2108/TestApplication.git/"
-  },
-  "publish": {
-    "provider": "github",
-    "releaseType": "release"
-  },
-  "build": {
-    "appId": "com.test.test",
-    "win": {
-      "publish": [
-        "github"
-      ]
-    }
   }
 }
