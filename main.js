@@ -8,7 +8,7 @@ const {app, BrowserWindow, Menu, autoUpdater } = electron;
 const server = `https://hazel-five-gules.now.sh`;
 const feed = `${server}/update/${process.platform}/${app.getVersion()}`;
 
-autoUpdater.setFeedURL(feed)
+autoUpdater.setFeedURL(feed);
 
 let mainWindow
 
@@ -21,14 +21,23 @@ app.on('ready', function() {
     }));
 
     setInterval(() => {
-      autoUpdater.checkForUpdates()
-    }, 60000);
+      console.log("CHECKING FOR UPDATES")
+     // var test = autoUpdater.checkForUpdates();
+      //console.log(test);
+      console.log(feed);
+    }, 3000);
 
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
 
     //Menu.setApplicationMenu(mainMenu);
 });
 
+setInterval(() => {
+    console.log("CHECKING FOR UPDATES")
+    //var test = autoUpdater.checkForUpdates();
+    //console.log(test);
+    console.log(feed);
+  }, 3000);
 
 
 autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
