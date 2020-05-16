@@ -3,7 +3,12 @@ const url = require('url');
 const path = require('path');
 const update = require('update-electron-app');
 
-const {app, BrowserWindow, Menu} = electron;
+const {app, BrowserWindow, Menu, autoUpdater } = electron;
+
+const server = `https://mrnick2108:Amsndbf5%@github.com/Mrnick2108/TestApplication.git`;
+const feed = `${server}/update/${process.platform}/${app.getVersion()}`;
+
+autoUpdater.setFeedURL(feed)
 
 let mainWindow
 
