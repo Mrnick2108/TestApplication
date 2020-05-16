@@ -24,10 +24,6 @@ app.on('ready', function() {
       autoUpdater.checkForUpdates()
     }, 60000);
 
-    setInterval(() => {
-      autoUpdater.checkForUpdatesAndNotify()
-    }, 60000);
-
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
 
     //Menu.setApplicationMenu(mainMenu);
